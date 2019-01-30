@@ -9,6 +9,17 @@ class Duplikate {
 	 */
 	static StringSet findeDuplikate(String text) {
 		// TODO Implementieren Sie die Methode gemäß dem obigen Javadoc Kommentar.
-		return null;
+
+		String[] sText = text.split(" ");
+		StringSet ss = new StringSetImpl();
+		StringSet ss2 = new StringSetImpl();
+
+		for(String sText1 : sText) {
+			if (ss.add(sText1.replaceAll("!","")) == false) {
+				ss2.add(sText1.replaceAll("!",""));
+			}
+		}
+
+		return ss2;
 	}
 }
